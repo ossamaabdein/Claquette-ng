@@ -1,0 +1,195 @@
+<div class="movies pt-5">
+    <div class="container pt-5">
+        <div class="">
+            <h2>Claquette Series</h2>
+        </div>
+
+        <div class="categoryTabs mt-5">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="trending-tab" data-bs-toggle="tab" data-bs-target="#trending" type="button" role="tab" aria-controls="trending" aria-selected="true"><span>Trending</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(10759)" class="nav-link" id="action-tab" data-bs-toggle="tab" data-bs-target="#action" type="button" role="tab" aria-controls="action" aria-selected="false"><span>Action/Adventure</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(35)" class="nav-link" id="comedy-tab" data-bs-toggle="tab" data-bs-target="#comedy" type="button" role="tab" aria-controls="comedy" aria-selected="false"><span>Comedy</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(80)" class="nav-link" id="crime-tab" data-bs-toggle="tab" data-bs-target="#crime" type="button" role="tab" aria-controls="crime" aria-selected="false"><span>Crime/Mystery</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(18)" class="nav-link" id="drama-tab" data-bs-toggle="tab" data-bs-target="#drama" type="button" role="tab" aria-controls="drama" aria-selected="false"><span>Drama</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(37)" class="nav-link" id="western-tab" data-bs-toggle="tab" data-bs-target="#western" type="button" role="tab" aria-controls="western" aria-selected="false"><span>Western</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(10751)" class="nav-link" id="family-tab" data-bs-toggle="tab" data-bs-target="#family" type="button" role="tab" aria-controls="family" aria-selected="false"><span>Family</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(10765)" class="nav-link" id="science-tab" data-bs-toggle="tab" data-bs-target="#science" type="button" role="tab" aria-controls="science" aria-selected="false"><span>Science-Fiction</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button (click)="getSeriesByGenre(16)" class="nav-link" id="animation-tab" data-bs-toggle="tab" data-bs-target="#animation" type="button" role="tab" aria-controls="animation" aria-selected="false"><span>Animation</span></button>
+                </li>
+            </ul> 
+            
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane show active" id="trending" role="tabpanel" aria-labelledby="trending-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of TrendingSeries" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="action" role="tabpanel" aria-labelledby="action-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="comedy" role="tabpanel" aria-labelledby="comedy-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="crime" role="tabpanel" aria-labelledby="crime-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="drama" role="tabpanel" aria-labelledby="drama-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="western" role="tabpanel" aria-labelledby="western-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="family" role="tabpanel" aria-labelledby="family-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="science" role="tabpanel" aria-labelledby="science-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="animation" role="tabpanel" aria-labelledby="animation-tab">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div *ngFor="let serie of SeriesByGenre" class="movieItem col-lg-3 col-md-4 col-sm-6 mb-5">
+                                <div class="imgContainer">
+                                    <div class="image">
+                                        <img routerLink='/tv-details/{{serie.id}}' src="https://image.tmdb.org/t/p/w500{{serie.poster_path}}" [alt]="serie.alt" [title]="serie.name" class="w-100">
+                                    </div>
+                                    <div class="title w-100 mt-1 text-center">
+                                        <span routerLink='/tv-details/{{serie.id}}' class="">{{serie.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

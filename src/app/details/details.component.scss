@@ -1,0 +1,58 @@
+.officialWebsite a {
+    color: inherit;
+}
+
+.CurrentTitle {
+    font-size: 1.875rem;
+    line-height: 30px;
+    color: rgb(29, 30, 31);
+}
+
+.genre {
+    background-color: rgb(39, 35, 35);
+}
+
+.factor {
+    font-weight: 600;
+    color: black;
+}
+
+.otherInfo div {
+    padding: 3px 0;
+}
+
+.imgContainer {
+    height: 360px;
+
+}
+
+.image {
+    overflow: hidden;
+    border-radius: 3px;
+    height: 360px;
+}
+
+.image img{
+    height: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+} 
+
+.title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.title span {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,63 @@
+<div id="details" class="pt-5">
+    <div class="container my-5">
+        <!-- Start of Details -->
+        <div class="row">
+            <div class="col-md-5">
+                <img src="https://image.tmdb.org/t/p/w500{{currentMovie.poster_path}}" class="w-100" alt="">
+            </div>
+            <div class="col-md-7 CurrentMovieInfo ps-5">
+                <h3 class="CurrentTitle fw-bold">{{currentMovie.title.toUpperCase()}}</h3>
+                <div class="genres d-flex mt-3 mb-5">
+                    <span *ngFor="let genre of currentMovie.genres" class="genre text-white me-2 px-1 py-0 rounded">{{genre.name}}</span>
+                </div>
+                <div class="otherInfo">
+                    <div class="runtime">
+                        <span><span class="factor">Run Time:</span> {{flooring(currentMovie.runtime)}}h {{remainder(currentMovie.runtime)}}min</span>
+                    </div>
+                    <div class="rating">
+                        <span><span class="factor">Rate: </span><span class="bg-dark text-white rounded px-1">{{currentMovie.vote_average}}</span></span>
+                        <i class="fas fa-star ms-2"></i>
+                    </div>
+                    <div class="release">
+                        <span><span class="factor">Release date: </span> {{currentMovie.release_date}}</span>
+                    </div>
+                    <div class="popu">
+                        <span><span class="factor">Popularity: </span>{{currentMovie.popularity}}</span>
+                    </div>
+                    <div class="lang">
+                        <span><span class="factor">Languages: </span><span *ngFor="let lang of currentMovie.spoken_languages" class="me-2">{{lang.english_name}}</span></span>
+                    </div>
+                    <div class="CurrentMovieDetails">
+                        <p class="pe-5"><span class="factor">Overview: </span> {{currentMovie.overview}}</p>
+                    </div>
+                </div>
+                <div class="officialWebsite">
+                    <a href="{{currentMovie.homepage}}" target="_blank"><span class="factor">Official Website</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- End of Details -->
+
+        <!-- Start of Recommended Movies -->
+        <div class="recommended">
+            <div class="container ps-0 mt-5">
+                <div class="py-3">
+                    <h3 class="fw-bolder">Recommended For You:</h3>
+                </div>
+                <div class="row">
+                    <div *ngFor="let movie of RecommendedMovies.slice(0,12)" class="movieItem col-md-3 mb-5 pb-1">
+                        <div class="imgContainer">
+                            <div class="image">
+                                <img routerLink='/details/{{movie.id}}' src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" [alt]="movie.alt" [title]="movie.title" class="w-100">
+                            </div>
+                            <div class="title w-100 mt-1 text-center">
+                                <span routerLink='/details/{{movie.id}}' class="">{{movie.title}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Recommended Movies -->
+    </div>
+</div>

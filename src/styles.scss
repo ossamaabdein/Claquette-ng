@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: rgb(241, 242, 243);
+}
+
+
+.owl-next, .owl-prev {
+    position: absolute;
+    top: 50%;
+    border-radius: 50% !important;
+    padding: 10px !important;
+    width: 45px !important;
+    height: 45px !important;
+    transform: translateY(-100%);
+    background-color: #fff !important;
+}
+
+.owl-next {
+    right: -15px;
+}
+
+.owl-prev {
+    left: -15px;
+}
+
+.owl-next svg, .owl-prev svg{
+    font-size: 22px !important;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.owl-item {
+    padding: 0 12px;
+}
+
+.image img {
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.image img:hover {
+    transform: scale(1.05);
+}
+
+.owl-item .title {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}

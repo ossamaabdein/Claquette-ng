@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+.logo img {
+    width: 100px;
+}
+
+.siteName h1 {
+    // font-family: 'Merriweather', serif;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.imgContainer {
+    position: relative;
+}
+
+.titleContainer {
+    position: relative;
+}
+
+.image {
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.image img{
+    height: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+} 
+
+.carousel-item img {
+    height: 80vh;
+}
+
+.title span {
+    font-size: 1.125rem;
+}
+
