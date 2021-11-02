@@ -1,15 +1,41 @@
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark mb-5">
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/home">
       <img src="../../assets/video.png" class="logo w-100" alt="">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Start of Mobile Search -->
+    <div class="searchInputMobile  pe-2">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+        <i class=" fas fa-search text-white fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMobile">
+        <input [(ngModel)]="movieInput" (keyup)="search(movieInput)" class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <div class="searchResults rounded" *ngIf="movieInput != ''">
+          <div class="bla p-1">
+            <span>"{{movieInput}}" found in {{returnedMovies.length}} results.</span>
+          </div>
+          <div (click)="movieInput = ''" *ngFor="let result of returnedMovies" class="itemResult d-flex px-1" [routerLink]="result.media_type == 'movie' ? ['/details/' + result.id] : ['/tv-details/' + result.id]">
+            <div class="imgCont p-1">
+              <img src="https://image.tmdb.org/t/p/w500{{result.poster_path}}" alt="">
+            </div>
+            <div class="year d-flex flex-column justify-content-around">
+              <span class="fs-6 fw-bold ms-2">{{result.name}}{{result.title}}</span> 
+              <h6 class="fw-normal ms-2" >({{result.release_date}}{{result.first_air_date}})</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End of Mobile Search -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse pc" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
+          <a class="nav-link" ari a-current="page" routerLink="/home" routerLinkActive="active">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/movies" routerLinkActive="active">Movies</a>
@@ -21,16 +47,33 @@
           <a class="nav-link" routerLink="/upcoming" routerLinkActive="active">Upcoming</a>
         </li>
       </ul>
-      <div class="signing ms-auto pe-2">
+      <div class="searchInput ms-auto pe-2">
+        <input [(ngModel)]="movieInput" (keyup)="search(movieInput)" class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <div class="searchResults rounded" *ngIf="movieInput != ''">
+          <div class="bla p-1">
+            <span>"{{movieInput}}" found in {{returnedMovies.length}} results.</span>
+          </div>
+          <div (click)="movieInput = ''" *ngFor="let result of returnedMovies" class="itemResult d-flex px-1" [routerLink]="result.media_type == 'movie' ? ['/details/' + result.id] : ['/tv-details/' + result.id]">
+            <div class="imgCont p-1">
+              <img src="https://image.tmdb.org/t/p/w500{{result.poster_path}}" alt="">
+            </div>
+            <div class="year d-flex flex-column justify-content-around">
+              <span class="fs-6 fw-bold ms-2">{{result.name}}{{result.title}}</span> 
+              <h6 class="fw-normal ms-2" >({{result.release_date}}{{result.first_air_date}})</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="signing px-2">
         <ul class="navbar-nav">
           <li *ngIf="!isLogin" class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
           </li>
           <li *ngIf="!isLogin" class="nav-item">
-            <a class="nav-link" routerLink="/signup">Signup</a>
+            <a class="nav-link" routerLink="/signup" routerLinkActive="active">Signup</a>
           </li>
           <li *ngIf="isLogin" class="nav-item">
-            <a (click)="logOut()" class="nav-link" routerLink="/login">Logout</a>
+            <a (click)="logOut()" class="nav-link" routerLink="/login" routerLinkActive="active">Logout</a>
           </li>
         </ul>
       </div>

@@ -10,19 +10,9 @@ import { MoviesService } from '../movies.service';
 export class SeriesComponent implements OnInit {
 
   TrendingSeries:any = [];
-  SeriesByGenre: any = [];
+  SeriesByGenre:any = [];
   media = "tv";
 
-/*  
-  actionId:number = 28;
-  comedyId:number = 35;
-  crimeId:number = 80;
-  dramaId:number = 18;
-  horrorId:number = 27;
-  romanceId:number = 10749;
-  scienceId:number = 878;
-  suspenceId:number = 53;
-*/
 
   constructor(private _MoviesService:MoviesService) { }
 

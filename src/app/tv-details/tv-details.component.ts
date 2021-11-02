@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '../movies.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -15,7 +15,7 @@ currentMedia:any="tv";
 currentMovie:any = [];
 RecommendedSeries:any = [];
 
-  constructor(private _ActivatedRoute:ActivatedRoute, private _MoviesService:MoviesService) { 
+  constructor(private _ActivatedRoute:ActivatedRoute, private _MoviesService:MoviesService, private _Router:Router) { 
     this.currentId = this._ActivatedRoute.snapshot.params.id;
 
     console.log(_ActivatedRoute.snapshot.params)
@@ -36,6 +36,7 @@ RecommendedSeries:any = [];
   ngOnInit(): void {
     this.currentMovieDetails();
     this.recommendedSeries();
+    this._Router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   customOptions: OwlOptions = {

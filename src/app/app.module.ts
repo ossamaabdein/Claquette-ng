@@ -14,7 +14,7 @@ import { DetailsComponent } from './details/details.component';
 import { TvDetailsComponent } from './tv-details/tv-details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -62,7 +62,8 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

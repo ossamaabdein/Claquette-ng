@@ -15,3 +15,89 @@
 .active {
     border-bottom: 2px solid #fff;
 }
+
+
+.searchInput {
+    position: relative;
+    width: 350px;
+}
+
+.searchInputMobile {
+    display: none;
+    // width: 300px;
+}
+
+
+
+@media  (max-width: 1000px) {
+    .searchInput {
+        top: 100%;
+        display: none;
+    }
+    .navbar-collapse.pc {
+        text-align: center;
+    }
+    .active {
+        background-color: rgb(180, 149, 149);
+        border-bottom: none;
+    }
+
+    #navbarMobile {
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        right: 10%
+    }
+
+    .searchInputMobile {
+        display: block;
+    }
+}
+
+@media  (max-width: 765px) {
+    #navbarMobile {
+        left: 2.5%;
+        right: 2.5%;
+    }
+}
+
+.searchInput input {
+    width: 100%;
+    
+}
+
+.bla {
+    background-color: rgb(243, 226, 226);
+    font-size: 14px !important;
+}
+
+.searchResults {
+    position: absolute;
+    width: 100%;
+    max-height: 400px;
+    background: rgb(241, 242, 243);
+    border: solid 1px rgb(192, 190, 190);
+    overflow-y: scroll;
+}
+
+.searchResults .itemResult {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(133, 132, 132);
+    transition: all 0.1s ease-in-out;
+}
+
+.searchResults .itemResult:hover {
+    background-color: rgb(226, 227, 228);
+}
+
+.searchResults .itemResult .imgCont {
+    width: 70px;
+    height: 90px;
+    
+}
+
+.searchResults .itemResult .imgCont img {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px
+}

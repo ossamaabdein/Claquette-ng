@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { MoviesService } from '../movies.service';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { AuthService } from '../auth.service';
 export class NavbarComponent implements OnInit {
 
   isLogin:boolean = false;
-  constructor(private _AuthService:AuthService) { }
+  movieInput: any = "";
+  returnedMovies:any = [];
+  constructor(private _AuthService:AuthService, private _MoviesService:MoviesService) { }
 
 
   ngOnInit(): void {
@@ -25,6 +28,12 @@ export class NavbarComponent implements OnInit {
 
   logOut(){
     this._AuthService.logOut();
+  }
+
+  search(input = this.movieInput) {
+    this._MoviesService.getSearchedMovies(input).subscribe((response) => {
+      this.returnedMovies = response.results;
+    });
   }
 
 }

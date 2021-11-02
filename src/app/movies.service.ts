@@ -33,4 +33,8 @@ export class MoviesService {
   getUpcoming():Observable<any> {
     return this.http.get("https://api.themoviedb.org/3/movie/upcoming?api_key=5e1ed7cfdf4a3adeb2f19d92c06f0327")
   }
+
+  getSearchedMovies(movieName:any):Observable<any> {
+    return this.http.get(`https://api.themoviedb.org/3/search/multi?api_key=5e1ed7cfdf4a3adeb2f19d92c06f0327&query=${movieName}`)
+  }
 }
