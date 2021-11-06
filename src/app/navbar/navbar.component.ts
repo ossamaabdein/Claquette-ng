@@ -10,7 +10,6 @@ declare var $:any;
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
   isLogin:boolean = false;
   movieInput: any = "";
   returnedMovies:any = [];
@@ -39,7 +38,4 @@ export class NavbarComponent implements OnInit {
       this.returnedMovies = response.results;
     });
   }
-
- 
-
 }

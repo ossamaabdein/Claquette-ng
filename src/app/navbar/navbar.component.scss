@@ -120,6 +120,13 @@
         .searchInputMobile {
             display: block;
         }
+        .darkMode {
+            display: none;
+        }
+        .darkModeMobile {
+            display: block;
+            // margin-right: -30px;
+        }
     }
     
     
@@ -140,4 +147,8 @@
             font-size: 14px !important;
         }
     }
+}
+
+.darkModeMobile {
+    display: none;
 }
