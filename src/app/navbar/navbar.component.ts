@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { MoviesService } from '../movies.service';
 
+declare var $:any;
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +18,9 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this._MoviesService.darken();
+    this._MoviesService.checkDark();
+
     this._AuthService.userData.subscribe(()=> {
       if(this._AuthService.userData.getValue() != null) {
         this.isLogin = true;
@@ -35,5 +39,7 @@ export class NavbarComponent implements OnInit {
       this.returnedMovies = response.results;
     });
   }
+
+ 
 
 }

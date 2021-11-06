@@ -1,5 +1,5 @@
 <head>
-    <link rel="icon" href="../../assets/film.png">
+    <link rel="icon" href="assets/film.png">
     <title>Claquette</title> 
     <meta name="keywords" content="movies, tv-shows, shows, show, movie, top rated, coming soon, trend movies">
     <meta name="description" content="a website to search for movies and tv-shows with options like (trends, top-rated, popular, coming soon and now-playing">
@@ -10,112 +10,63 @@
 
 <div id="home" class="pt-5">
     <div class="container mt-5">
+        <!-- Start of home header -->
         <div class="header">
             <div class="siteInterface">
                 <div class="logo m-auto text-center">
-                    <img class="wow tada" data-wow-delay="2s" src="assets/video.png" alt="">
+                    <img src="assets/video.png" alt="siteLogo">
                 </div>
                 <div class="siteName text-center">
-                    <h1>CLAQUETTE</h1>
+                    <h1 class="fw-bolder">CLAQUETTE</h1>
                     <p>Find out your next movie <i class="far fa-smile-wink text-danger"></i></p>
                 </div>
             </div>
         </div>
+        <!-- End of home header -->
 
+        <!-- Start of Trending Movies Carousel -->
         <div class="TrendingMovies">
             <div class="title py-4 ps-2">
-                <h1 class="fs-3 fw-bolder">TRENDING MOVIES</h1>
+                <h3 class="fw-bolder">TRENDING MOVIES</h3>
             </div>
             <owl-carousel-o [options]="customOptions">
                 <ng-container *ngFor="let movie of TrendingMovies">
-                <ng-template class="text-center" carouselSlide [id]="movie.id">
-                    <div class="imageContainer">
-                        <div class="image">
-                            <img routerLink='/details/{{movie.id}}' src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" [alt]="movie.alt" [title]="movie.title">
+                    <ng-template class="text-center" carouselSlide [id]="movie.id">
+                        <div class="imageContainer">
+                            <div class="image">
+                                <img routerLink='/details/{{movie.id}}' src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" [alt]="movie.alt" [title]="movie.title">
+                            </div>
+                            <div class="title w-100 mt-1 text-center">
+                                <span routerLink='/details/{{movie.id}}' class="">{{movie.title}}</span>
+                            </div>
                         </div>
-                        <div class="title w-100 mt-1 text-center">
-                            <span routerLink='/details/{{movie.id}}' class="">{{movie.title}}</span>
-                        </div>
-                    </div>
-                </ng-template>
+                    </ng-template>
                 </ng-container>
             </owl-carousel-o>
         </div>
-
+        <!-- End of Trending Movies Carousel -->
+        
+        <!-- Start of Trending Series Carousel -->
         <div class="TrendingSeries pt-4">
             <div class="title py-4 ps-2">
-                <h1 class="fs-3 fw-bolder">TRENDING SERIES</h1>
+                <h3 class="fw-bolder">TRENDING SERIES</h3>
             </div>
             <owl-carousel-o [options]="customOptions">
                 <ng-container *ngFor="let show of TrendingTv">
-                <ng-template class="text-center" carouselSlide [id]="show.id">
-                    <div class="image">
-                        <img routerLink='/tv-details/{{show.id}}' src="https://image.tmdb.org/t/p/w500{{show.poster_path}}" [alt]="show.alt" [title]="show.name">
-                    </div>
-                    <div class="title w-100 mt-1 text-center">
-                        <span routerLink='/tv-details/{{show.id}}' class="">{{show.name}}</span>
-                    </div>
-                </ng-template>
+                    <ng-template class="text-center" carouselSlide [id]="show.id">
+                        <div class="image">
+                            <img routerLink='/tv-details/{{show.id}}' src="https://image.tmdb.org/t/p/w500{{show.poster_path}}" [alt]="show.alt" [title]="show.name">
+                        </div>
+                        <div class="title w-100 mt-1 text-center">
+                            <span routerLink='/tv-details/{{show.id}}' class="">{{show.name}}</span>
+                        </div>
+                    </ng-template>
                 </ng-container>
             </owl-carousel-o>
-        </div>
-        
+        </div>        
+        <!-- End of Trending Series Carousel -->
     </div>
-
-
-    <!-- <div class="container mt-5">
-        <div class="row">
-            <div *ngFor="let movie of TrendingMovies" class="movieItem col-md-3 mb-3">
-                <div class="imgContainer">
-                    <img class="w-100 rounded" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="">
-                    <div class="overlay text-white text-center d-flex flex-column justify-content-center align-items-center rounded" routerLink="/details/{{movie.id}}">
-                        <div class="rateContainer">
-                            <i class="fas fa-star m-auto mb-1 fs-4"></i>
-                            <span class="px-3 myclass d-block" id="rate">{{movie.vote_average}} / 10</span>
-                        </div>
-                        <div class="buttonContainer mt-3">
-                            <button class="btn bg-success text-white" routerLink="/details/{{movie.id}}">More Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="titleContainer text-center">
-                    <span class="fs-5 fw-bold d-block">{{movie.title}}{{movie.name}}</span>
-                    <span class="fw-normal fs-6">({{movie.release_date?.slice(0,4)}}{{movie.first_air_date?.slice(0,4)}})</span>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-    <!-- <div class="container mt-5">
-        <div class="title text-center py-3">
-            <h1>Trending Tv Shows</h1>
-        </div>
-        <div class="row">
-            <div *ngFor="let movie of TrendingTv" class="movieItem col-md-3 mb-3">
-                <div class="imgContainer">
-                    <img class="w-100 rounded" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="">
-                    <div class="overlay text-white text-center d-flex flex-column justify-content-center align-items-center rounded" routerLink="/tv-details/{{movie.id}}">
-                        <div class="rateContainer">
-                            <i class="fas fa-star m-auto mb-1 fs-4"></i>
-                            <span class="px-3 myclass d-block" id="rate">{{movie.vote_average}} / 10</span>
-                            <div class="">
-                            </div>
-                        </div>
-                        <div class="buttonContainer mt-3">
-                            <button class="btn bg-success text-white" routerLink="//tv-details/{{movie.id}}">More Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="titleContainer text-center">
-                    <span class="fs-5 fw-bold d-block">{{movie.title}}{{movie.name}}</span>
-                    <span class="fw-normal fs-6">({{movie.release_date?.slice(0,4)}}{{movie.first_air_date?.slice(0,4)}})</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
+</div>
+    
+    
+    

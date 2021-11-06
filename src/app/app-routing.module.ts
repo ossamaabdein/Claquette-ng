@@ -10,7 +10,6 @@ import { MoviesComponent } from './movies/movies.component';
 import { SignupComponent } from './signup/signup.component';
 import { TvDetailsComponent } from './tv-details/tv-details.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
-import { TrendingComponent } from './MoviesNestedComponents/trending/trending.component';
 
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path:"tv-details/:id", component:TvDetailsComponent},
   {path:"login", component:LoginComponent},
   {path:"signup", component:SignupComponent},
-  {path:"movies/trending", component:TrendingComponent},
   {path:"**", component:NotfoundComponent}
 ];
 

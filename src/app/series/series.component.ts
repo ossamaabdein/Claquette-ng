@@ -17,19 +17,21 @@ export class SeriesComponent implements OnInit {
   constructor(private _MoviesService:MoviesService) { }
 
   getSeries(){
-    this.TrendingSeries = this._MoviesService.getMovies("trending/tv/week").subscribe((response)=>{
+    this._MoviesService.getMovies("trending/tv/week").subscribe((response)=>{
       this.TrendingSeries = response.results;
     })
   }
 
   getSeriesByGenre(genreId:number){
-    this.SeriesByGenre = this._MoviesService.getByGenre(this.media, genreId).subscribe((response)=>{
+    this._MoviesService.getByGenre(this.media, genreId).subscribe((response)=>{
       this.SeriesByGenre = response.results;
     })
 }
 
   ngOnInit(): void {
     this.getSeries();
+    // this._MoviesService.darken();
+    this._MoviesService.checkDark();
   }
 
 }

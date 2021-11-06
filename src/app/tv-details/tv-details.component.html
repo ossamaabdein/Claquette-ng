@@ -6,7 +6,7 @@
                 <img src="https://image.tmdb.org/t/p/w500{{currentMovie.poster_path}}" class="w-100" alt="">
             </div>
             <div class="col-md-7 CurrentMovieInfo ps-5">
-                <h3 class="CurrentTitle fw-bold">{{currentMovie.name.toUpperCase()}}</h3>
+                <h3 class="CurrentTitle fw-bold">{{currentMovie.name?.toUpperCase()}}</h3>
                 <div class="genres d-flex mt-3 mb-5">
                     <span *ngFor="let genre of currentMovie.genres" class="genre text-white me-2 px-1 py-0 rounded">{{genre.name}}</span>
                 </div>

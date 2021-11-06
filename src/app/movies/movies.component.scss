@@ -1,72 +1,64 @@
 
 .movieItem {
     padding-bottom: 10px !important;
+    .imgContainer {
+        position: relative;
+        height: 360px;
+        .image {
+            overflow: hidden;
+            border-radius: 3px;
+            height: 360px;
+        }
+        .image img{
+            height: 100%;
+            cursor: pointer;
+            border-radius: 3px;
+            -webkit-backface-visibility: hidden; 
+            -ms-transform: translateZ(0); /* IE 9 */
+            -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+            transform: translateZ(0);
+            transition: all 0.3s ease-in-out;
+        }
+        .image img:hover {
+            transform: scale(1.05);
+        } 
+        .title {
+            font-size: 1rem;
+            font-weight: bold;
+            span {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
 }
 
-.imgContainer {
-    position: relative;
-}
+.categoryTabs {
+    .nav-tabs {
+        border-bottom: none;
+    }
+    li button {
+        background-color: transparent !important;
+        border: none;
+        color: #495057;
+        font-weight: bold;
+        padding: 5px 5px;
+        margin: auto 10px;
+    }
+    li button.dark {
+        color: #e3e8ec;
+    }
 
-.titleContainer {
-    position: relative;
-}
-
-.imgContainer {
-    height: 360px;
-}
-
-.image {
-    overflow: hidden;
-    border-radius: 3px;
-    height: 360px;
-}
-
-.image img{
-    height: 100%;
-    cursor: pointer;
-    border-radius: 3px;
-    -webkit-backface-visibility: hidden; 
-    -ms-transform: translateZ(0); /* IE 9 */
-    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
-    transform: translateZ(0);
-    transition: all 0.3s ease-in-out;
-}
-
-.image img:hover {
-    transform: scale(1.05);
+    button.active span {
+        color: black;
+        border-bottom: solid 3px black;
+        padding-bottom: 5px;
+    }
+    li button.dark.active span {
+        color: white;
+        border-bottom: solid 3px white;
+    }
 } 
-
-.title {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.title span {
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.nav-tabs {
-    border-bottom: none;
-}
-
-.categoryTabs li button {
-    background-color: transparent !important;
-    border: none;
-    color: #495057;
-    font-weight: bold;
-    padding: 5px 5px;
-    margin: auto 10px;
-    
-}
-
-
-
-.categoryTabs li button.active span {
-    color: black;
-    border-bottom: solid 3px black;
-    padding-bottom: 5px;
-}
 
 @media (max-width:1000px) {
     .categoryTabs {

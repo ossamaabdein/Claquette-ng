@@ -22,13 +22,13 @@
             </div>
             <div class="year d-flex flex-column justify-content-around">
               <span class="fs-6 fw-bold ms-2">{{result.name}}{{result.title}}</span> 
-              <h6 class="fw-normal ms-2" >({{result.release_date}}{{result.first_air_date}})</h6>
+              <h6 class="fw-normal ms-2" >({{result.release_date?.slice(0,4)}}{{result.first_air_date?.slice(0,4)}})</h6>
             </div>
           </div>
         </div>
       </div>
     </div>
-  <!-- End of Mobile Search -->
+    <!-- End of Mobile Search -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -47,9 +47,10 @@
           <a class="nav-link" routerLink="/upcoming" routerLinkActive="active">Upcoming</a>
         </li>
       </ul>
-      <div class="searchInput ms-auto pe-2">
-        <input [(ngModel)]="movieInput" (keyup)="search(movieInput)" class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <div class="searchResults rounded" *ngIf="movieInput != ''">
+      <div class="searchInput ms-auto">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input [(ngModel)]="movieInput" (keyup)="search(movieInput)" class="form-control inputField" type="search" placeholder="Search" aria-label="Search">
+        <div id="searchResults" class="searchResults rounded" *ngIf="movieInput != ''">
           <div class="bla p-1">
             <span>"{{movieInput}}" found in {{returnedMovies.length}} results.</span>
           </div>
@@ -59,7 +60,7 @@
             </div>
             <div class="year d-flex flex-column justify-content-around">
               <span class="fs-6 fw-bold ms-2">{{result.name}}{{result.title}}</span> 
-              <h6 class="fw-normal ms-2" >({{result.release_date}}{{result.first_air_date}})</h6>
+              <h6 class="ms-2 releaseDate" >({{result.release_date?.slice(0,4)}}{{result.first_air_date?.slice(0,4)}})</h6>
             </div>
           </div>
         </div>
@@ -77,6 +78,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="darkMode rounded-pill" id="darkMode">
+      <div class="circle" id="circle"></div>
     </div>
   </div>
 </nav>

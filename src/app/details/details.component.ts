@@ -17,8 +17,6 @@ RecommendedMovies:any = [];
 
   constructor(private _ActivatedRoute:ActivatedRoute, private _MoviesService:MoviesService, private _Router:Router) { 
     this.currentId = this._ActivatedRoute.snapshot.params.id;
-
-    console.log(_ActivatedRoute.snapshot.params)
   }
 
   currentMovieDetails() {
@@ -46,6 +44,7 @@ RecommendedMovies:any = [];
     this.currentMovieDetails();
     this.recommendedMovies();
     this._Router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this._MoviesService.checkDark();
   }
 
   customOptions: OwlOptions = {

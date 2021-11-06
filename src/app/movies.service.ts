@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
+declare var $:any;
 @Injectable({
   providedIn: 'root'
 })
@@ -36,5 +36,44 @@ export class MoviesService {
 
   getSearchedMovies(movieName:any):Observable<any> {
     return this.http.get(`https://api.themoviedb.org/3/search/multi?api_key=5e1ed7cfdf4a3adeb2f19d92c06f0327&query=${movieName}`)
+  }
+
+  // When routing to other components, it checks if there is already darkMode applied or not, 
+  // otherwise you need to reactivate darkMode again.
+  checkDark(){
+    if($("#circle").hasClass("dark")) {
+      $("body").css("backgroundColor" , "black").css("color" , "white");
+      $(".nav-tabs li button").addClass("dark");
+      $(".CurrentTitle").addClass("dark");
+      $(".factor").addClass("dark");
+      $(".otherInfo").addClass("dark2");
+
+    } else {
+      $("body").css("backgroundColor" , "rgb(241, 242, 243)").css("color" , "black");
+      $(".nav-tabs li button").removeClass("dark");
+      $(".CurrentTitle").removeClass("dark");
+      $(".factor").removeClass("dark");
+      $(".otherInfo").removeClass("dark2");
+    }
+  }
+
+  darken() {
+    $("#darkMode").click(function (){
+      $("#darkMode").toggleClass("bgCol");
+      $("#circle").toggleClass("dark");
+      if($("#circle").hasClass("dark")) {
+        $("body").css("backgroundColor" , "black").css("color" , "white");
+        $(".nav-tabs li button").addClass("dark");
+        $(".CurrentTitle").addClass("dark");
+        $(".factor").addClass("dark");
+        $(".otherInfo").addClass("dark2");
+      } else {
+        $("body").css("backgroundColor" , "rgb(241, 242, 243)").css("color" , "black");
+        $(".nav-tabs li button").removeClass("dark");
+        $(".CurrentTitle").removeClass("dark");
+        $(".factor").removeClass("dark");
+        $(".otherInfo").removeClass("dark2");
+      }
+    })
   }
 }

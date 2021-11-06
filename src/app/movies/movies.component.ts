@@ -28,13 +28,13 @@ export class MoviesComponent implements OnInit {
   constructor(private _MoviesService:MoviesService) { }
 
   getMovies(){
-    this.TrendingMovies = this._MoviesService.getMovies("trending/movie/week").subscribe((response)=>{
+    this._MoviesService.getMovies("trending/movie/week").subscribe((response)=>{
       this.TrendingMovies = response.results;
     })
   }
 
   getMoviesByGenre(genreId:number){
-    this.MoviesByGenre = this._MoviesService.getByGenre(this.media, genreId).subscribe((response)=>{
+    this._MoviesService.getByGenre(this.media, genreId).subscribe((response)=>{
       this.MoviesByGenre = response.results;
     })
   }
@@ -47,7 +47,9 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    this.getTopRated()
+    this.getTopRated();
+    // this._MoviesService.darken();
+    this._MoviesService.checkDark();
   }
 
 }

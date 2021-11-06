@@ -19,15 +19,6 @@ import { LogoutComponent } from './logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { ActionComponent } from './MoviesNestedComponents/action/action.component';
-import { ComedyComponent } from './MoviesNestedComponents/comedy/comedy.component';
-import { CrimeComponent } from './MoviesNestedComponents/crime/crime.component';
-import { DramaComponent } from './MoviesNestedComponents/drama/drama.component';
-import { HorrorComponent } from './MoviesNestedComponents/horror/horror.component';
-import { RomanceComponent } from './MoviesNestedComponents/romance/romance.component';
-import { ScienceComponent } from './MoviesNestedComponents/science/science.component';
-import { SuspenceComponent } from './MoviesNestedComponents/suspence/suspence.component';
-import { TrendingComponent } from './MoviesNestedComponents/trending/trending.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -44,15 +35,6 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     SignupComponent,
     LogoutComponent,
-    ActionComponent,
-    ComedyComponent,
-    CrimeComponent,
-    DramaComponent,
-    HorrorComponent,
-    RomanceComponent,
-    ScienceComponent,
-    SuspenceComponent,
-    TrendingComponent,
     FooterComponent,
     ],
   imports: [

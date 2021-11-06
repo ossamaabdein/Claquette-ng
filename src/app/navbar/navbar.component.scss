@@ -1,103 +1,143 @@
 .navbar {
     background-color: #000 !important;
-}
-
-.navbar a {
-    color: #fff;
-    padding: 3px 0 !important;
-    margin: 0 10px;
-}
-
-.navbar img.logo {
-    width: 40px !important;
-}
-
-.active {
-    border-bottom: 2px solid #fff;
-}
-
-
-.searchInput {
-    position: relative;
-    width: 350px;
-}
-
-.searchInputMobile {
-    display: none;
-    // width: 300px;
-}
-
-
-
-@media  (max-width: 1000px) {
-    .searchInput {
-        top: 100%;
-        display: none;
+    a {
+        color: #fff;
+        padding: 3px 0 !important;
+        margin: 0 10px;
     }
-    .navbar-collapse.pc {
-        text-align: center;
+    img.logo {
+        width: 40px !important;
     }
     .active {
-        background-color: rgb(180, 149, 149);
-        border-bottom: none;
+        border-bottom: 2px solid #fff;
     }
-
-    #navbarMobile {
-        position: absolute;
-        top: 100%;
-        left: 10%;
-        right: 10%
+    .searchInput {
+        position: relative;
+        width: 350px;
     }
-
     .searchInputMobile {
+        display: none;
+    }
+    .inputField {
+        padding-left: 2rem;
+    }
+    .form-control-feedback {
+        position: absolute;
+        z-index: 2;
         display: block;
+        width: 1rem;
+        height: 1rem;
+        line-height: 24px;
+        text-align: center;
+        pointer-events: none;
+        color: #babdc0;
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-50%);
+    }
+    .releaseDate {
+        font-size: 15px !important;
+    }
+    .searchResults {
+        position: absolute;
+        width: 100%;
+        max-height: 400px;
+        color: black !important;
+        background: rgb(241, 242, 243);
+        border: solid 1px rgb(192, 190, 190);
+        overflow-y: scroll;
+        .bla {
+            background-color: rgb(168, 205, 236);
+        }
+        .itemResult {
+            cursor: pointer;
+            border-bottom: 1px solid rgb(133, 132, 132);
+            transition: all 0.1s ease-in-out;
+            &:hover {
+                background-color: rgb(226, 227, 228);
+            }
+            .imgCont {
+                width: 70px;
+                height: 90px;   
+                img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 3px
+                }
+            }
+        }
     }
 }
 
-@media  (max-width: 765px) {
-    #navbarMobile {
-        left: 2.5%;
-        right: 2.5%;
-    }
-}
-
-.searchInput input {
-    width: 100%;
-    
-}
-
-.bla {
-    background-color: rgb(243, 226, 226);
-    font-size: 14px !important;
-}
-
-.searchResults {
-    position: absolute;
-    width: 100%;
-    max-height: 400px;
-    background: rgb(241, 242, 243);
-    border: solid 1px rgb(192, 190, 190);
-    overflow-y: scroll;
-}
-
-.searchResults .itemResult {
+.darkMode {
+    width: 30px;
+    height: 15px;
+    border: solid rgb(161, 159, 159) 1.5px;
+    background-color: #fff;
+    padding: 1px;
+    box-sizing: content-box;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
-    border-bottom: 1px solid rgb(133, 132, 132);
-    transition: all 0.1s ease-in-out;
+    position: relative;
+    .circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: rgb(129, 126, 126);
+        transition: all ease-in-out 0.3s;
+    }    
 }
 
-.searchResults .itemResult:hover {
-    background-color: rgb(226, 227, 228);
+.bgCol {
+    background-color: rgb(7, 7, 49);
 }
 
-.searchResults .itemResult .imgCont {
-    width: 70px;
-    height: 90px;
+.dark {
+    transform: translateX(100%);
+    background-color: #fff !important;
+}
+
+// Responsive Design for smaller laptops and PCs screens
+@media (max-width: 1000px) {
+    .navbar {
+        .searchInput {
+            top: 100%;
+            display: none;
+        }
+        .navbar-collapse.pc {
+            text-align: center;
+        }
+        .active {
+            background-color: rgb(180, 149, 149);
+            border-bottom: none;
+        }
+        #navbarMobile {
+            position: absolute;
+            top: 100%;
+            left: 10%;
+            right: 10%
+        }
+        .searchInputMobile {
+            display: block;
+        }
+    }
+    
     
 }
 
-.searchResults .itemResult .imgCont img {
-    height: 100%;
-    width: 100%;
-    border-radius: 3px
+// Responsive Design for Tablets and Mobiles
+@media  (max-width: 765px) {
+    .navbar {
+        #navbarMobile {
+            left: 2.5%;
+            right: 2.5%;
+        }
+        .searchInput input {
+            width: 100%;
+        }
+        .bla {
+            background-color: rgb(243, 226, 226);
+            font-size: 14px !important;
+        }
+    }
 }

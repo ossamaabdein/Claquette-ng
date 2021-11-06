@@ -37,6 +37,7 @@ RecommendedSeries:any = [];
     this.currentMovieDetails();
     this.recommendedSeries();
     this._Router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this._MoviesService.checkDark();
   }
 
   customOptions: OwlOptions = {

@@ -1,10 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
 body {
     background-color: rgb(241, 242, 243);
 }
 
-
+// Although these Owl styles are related only to home page, they don't work unless put here in global style!
 .owl-next, .owl-prev {
     position: absolute;
     top: 50%;
@@ -14,6 +14,14 @@ body {
     height: 45px !important;
     transform: translateY(-100%);
     background-color: #fff !important;
+    svg {
+        font-size: 22px !important;
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+        color: black;
+    }
 }
 
 .owl-next {
@@ -24,33 +32,12 @@ body {
     left: -15px;
 }
 
-.owl-next svg, .owl-prev svg{
-    font-size: 22px !important;
-    position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-    color: black;
-}
-
 .owl-item {
     padding: 0 12px;
+    .title {
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
 }
 
-.image img {
-    border-radius: 3px;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-
-.image img:hover {
-    transform: scale(1.05);
-}
-
-.owl-item .title {
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
