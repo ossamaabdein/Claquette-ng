@@ -41,7 +41,7 @@ export class MoviesService {
   // When routing to other components, it checks if there is already darkMode applied or not, 
   // otherwise you need to reactivate darkMode again.
   checkDark(){
-    if($("#circle").hasClass("dark")) {
+    if($(".circle").hasClass("dark")) {
       $("body").css("backgroundColor" , "black").css("color" , "white");
       $(".nav-tabs li button").addClass("dark");
       $(".CurrentTitle").addClass("dark");
@@ -58,10 +58,10 @@ export class MoviesService {
   }
 
   darken() {
-    $("#darkMode").click(function (){
-      $("#darkMode").toggleClass("bgCol");
-      $("#circle").toggleClass("dark");
-      if($("#circle").hasClass("dark")) {
+    $(".darkMode").click(function (){
+      $(".darkMode").toggleClass("bgCol");
+      $(".circle").toggleClass("dark");
+      if($(".circle").hasClass("dark")) {
         $("body").css("backgroundColor" , "black").css("color" , "white");
         $(".nav-tabs li button").addClass("dark");
         $(".CurrentTitle").addClass("dark");
