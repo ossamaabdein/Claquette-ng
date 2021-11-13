@@ -42,12 +42,11 @@ export class MoviesService {
   // otherwise you need to reactivate darkMode again.
   checkDark(){
     if($(".circle").hasClass("dark")) {
-      $("body").css("backgroundColor" , "black").css("color" , "white");
+      $("body").css("backgroundColor" , "#171717").css("color" , "#B1BBBB");
       $(".nav-tabs li button").addClass("dark");
       $(".CurrentTitle").addClass("dark");
       $(".factor").addClass("dark");
       $(".otherInfo").addClass("dark2");
-
     } else {
       $("body").css("backgroundColor" , "rgb(241, 242, 243)").css("color" , "black");
       $(".nav-tabs li button").removeClass("dark");
@@ -62,7 +61,7 @@ export class MoviesService {
       $(".darkMode").toggleClass("bgCol");
       $(".circle").toggleClass("dark");
       if($(".circle").hasClass("dark")) {
-        $("body").css("backgroundColor" , "black").css("color" , "white");
+        $("body").css("backgroundColor" , "#171717").css("color" , "#B1BBBB");
         $(".nav-tabs li button").addClass("dark");
         $(".CurrentTitle").addClass("dark");
         $(".factor").addClass("dark");

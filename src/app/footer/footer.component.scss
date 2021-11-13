@@ -1,10 +1,16 @@
-.socialMedia a {
-    font-size: 20px;
-    color: #fff;
-    padding: 5px;
-    transition: all 0.25s ease-in-out;
+footer {
+    background-color: #000;
+    color: #B1BBBB !important;
+    font-family: arial;
+    font-size: 15px;
+    .socialMedia a {
+        font-size: 22px;
+        color: #B1BBBB;
+        padding: 5px;
+        transition: all 0.25s ease-in-out;
+        &:hover {
+            color: rgb(236, 72, 72);
+        }
+    }
 }
 
-.socialMedia a:hover {
-    color: rgb(236, 72, 72);
-}

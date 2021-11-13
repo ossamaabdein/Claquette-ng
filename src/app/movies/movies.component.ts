@@ -48,7 +48,6 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
     this.getMovies();
     this.getTopRated();
-    // this._MoviesService.darken();
     this._MoviesService.checkDark();
   }
 

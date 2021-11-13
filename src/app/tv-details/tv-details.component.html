@@ -6,13 +6,13 @@
                 <img src="https://image.tmdb.org/t/p/w500{{currentMovie.poster_path}}" class="w-100" alt="">
             </div>
             <div class="col-md-7 CurrentMovieInfo ps-5">
-                <h3 class="CurrentTitle fw-bold">{{currentMovie.name?.toUpperCase()}}</h3>
+                <h3 class="CurrentTitle fw-bold">{{currentMovie.name|uppercase}}</h3>
                 <div class="genres d-flex mt-3 mb-5">
                     <span *ngFor="let genre of currentMovie.genres" class="genre text-white me-2 px-1 py-0 rounded">{{genre.name}}</span>
                 </div>
                 <div class="otherInfo">
                     <div class="runtime">
-                        <span><span class="factor">Run Time: </span>{{currentMovie.episode_run_time[0]}}min</span>
+                        <span><span class="factor">Run Time: </span>{{currentMovie.episode_run_time}}min</span>
                     </div>
                     <div class="rating">
                         <span><span class="factor">Rate: </span><span class="bg-dark text-white rounded px-1">{{currentMovie.vote_average}}</span></span>

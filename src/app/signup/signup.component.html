@@ -1,6 +1,9 @@
 
 <div class="registeration py-5">
     <div class="container mt-5">
+        <div class="header py-4">
+            <h2 class="fw-bolder text-center">Join <span class="brand">CLAQUETTE </span>Now! <br><span class="and">&</span><br>Enjoy Exclusive Features</h2>
+        </div>
         <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm(registerForm)">
             <div class="formControl">
                 <label for="first_name">First Name:</label>
@@ -38,7 +41,7 @@
             </div>
 
             <button [disabled]="registerForm.invalid" type="submit" class="btn bg-primary text-white mt-3">Sign-up</button>
-            <div class="">
+            <div class="pt-2">
                 <span class="">Already have an account ?! .. <a routerLink="/login">Login</a> now</span>            
             </div>
         </form>

@@ -30,7 +30,6 @@ export class SeriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSeries();
-    // this._MoviesService.darken();
     this._MoviesService.checkDark();
   }
 

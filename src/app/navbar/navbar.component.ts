@@ -38,4 +38,9 @@ export class NavbarComponent implements OnInit {
       this.returnedMovies = response.results;
     });
   }
+
+  isDark= false;
+  tstDark() {
+    this.isDark = !this.isDark;
+  }
 }

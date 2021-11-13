@@ -1,9 +1,10 @@
 .navbar {
     background-color: #000 !important;
     a {
-        color: #fff;
+        color: #B1BBBB;
         padding: 3px 0 !important;
         margin: 0 10px;
+        font-family: 'Roboto Slab', serif;
     }
     img.logo {
         width: 40px !important;
@@ -48,6 +49,7 @@
         overflow-y: scroll;
         .bla {
             background-color: rgb(168, 205, 236);
+            font-size: 14px;
         }
         .itemResult {
             cursor: pointer;
