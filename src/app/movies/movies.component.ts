@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { MoviesService } from '../movies.service';
 
 
@@ -14,34 +15,29 @@ export class MoviesComponent implements OnInit {
   TopRated: any = [];
   media = "movie";
 
-/*  
-  actionId:number = 28;
-  comedyId:number = 35;
-  crimeId:number = 80;
-  dramaId:number = 18;
-  horrorId:number = 27;
-  romanceId:number = 10749;
-  scienceId:number = 878;
-  suspenceId:number = 53;
-*/
-
-  constructor(private _MoviesService:MoviesService) { }
+  constructor(private _MoviesService:MoviesService, private _NgxSpinnerService: NgxSpinnerService) { }
 
   getMovies(){
+    this._NgxSpinnerService.show();
     this._MoviesService.getMovies("trending/movie/week").subscribe((response)=>{
       this.TrendingMovies = response.results;
+      this._NgxSpinnerService.hide();
     })
   }
 
   getMoviesByGenre(genreId:number){
+    this._NgxSpinnerService.show();
     this._MoviesService.getByGenre(this.media, genreId).subscribe((response)=>{
       this.MoviesByGenre = response.results;
+      this._NgxSpinnerService.hide();
     })
   }
 
   getTopRated() {
+    this._NgxSpinnerService.show();
     this._MoviesService.getMovies("movie/top_rated").subscribe((response)=>{
       this.TopRated = response.results;
+      this._NgxSpinnerService.hide();
     })
   }
 

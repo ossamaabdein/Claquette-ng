@@ -1,12 +1,7 @@
-<head>
-    <link rel="icon" href="assets/film.png">
-    <title>Claquette</title> 
-    <meta name="keywords" content="movies, tv-shows, shows, show, movie, top rated, coming soon, trend movies">
-    <meta name="description" content="a website to search for movies and tv-shows with options like (trends, top-rated, popular, coming soon and now-playing">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-</head>
 
+<div class="loadingScreen">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+</div>
 
 <div id="home" class="pt-5">
     <div class="container mt-5">
@@ -25,7 +20,7 @@
         <!-- End of home header -->
 
         <!-- Start of Trending Movies Carousel -->
-        <div class="TrendingMovies">
+        <div class="TrendingMovies" *ngIf="TrendingMovies != ''">
             <div class="title py-4 ps-2">
                 <h3 class="fw-bolder">TRENDING MOVIES</h3>
             </div>
@@ -47,7 +42,7 @@
         <!-- End of Trending Movies Carousel -->
         
         <!-- Start of Trending Series Carousel -->
-        <div class="TrendingSeries pt-4">
+        <div class="TrendingSeries pt-4" *ngIf="TrendingTv != ''">
             <div class="title py-4 ps-2">
                 <h3 class="fw-bolder">TRENDING SERIES</h3>
             </div>

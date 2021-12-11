@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { MoviesService } from '../movies.service';
-
 
 @Component({
   selector: 'app-series',
@@ -14,17 +14,21 @@ export class SeriesComponent implements OnInit {
   media = "tv";
 
 
-  constructor(private _MoviesService:MoviesService) { }
+  constructor(private _MoviesService:MoviesService, private _NgxSpinnerService: NgxSpinnerService) { }
 
   getSeries(){
+    this._NgxSpinnerService.show();
     this._MoviesService.getMovies("trending/tv/week").subscribe((response)=>{
       this.TrendingSeries = response.results;
+      this._NgxSpinnerService.hide();
     })
   }
 
   getSeriesByGenre(genreId:number){
+    this._NgxSpinnerService.show();
     this._MoviesService.getByGenre(this.media, genreId).subscribe((response)=>{
       this.SeriesByGenre = response.results;
+      this._NgxSpinnerService.hide();
     })
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '../movies.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -15,13 +16,15 @@ currentMedia:any="movie";
 currentMovie:any = [];
 RecommendedMovies:any = [];
 
-  constructor(private _ActivatedRoute:ActivatedRoute, private _MoviesService:MoviesService, private _Router:Router) { 
+  constructor(private _ActivatedRoute:ActivatedRoute, private _MoviesService:MoviesService, private _Router:Router, private _NgxSpinnerService: NgxSpinnerService) { 
     this.currentId = this._ActivatedRoute.snapshot.params.id;
   }
 
   currentMovieDetails() {
+    this._NgxSpinnerService.show();
     this._MoviesService.getCurrentMovie(this.currentMedia, this.currentId).subscribe((response)=> {
-      this.currentMovie = response;
+    this.currentMovie = response;
+    this._NgxSpinnerService.hide()    
     })
   }
 

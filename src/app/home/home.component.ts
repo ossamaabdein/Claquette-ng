@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -43,12 +44,13 @@ export class HomeComponent implements OnInit {
   TrendingMovies:any = [];
   TrendingTv:any = [];
 
-  constructor(private _moviesServices: MoviesService) {
+  constructor(private _moviesServices: MoviesService, private _NgxSpinnerService: NgxSpinnerService ) {
    }
   
   getMoviesList() {
     this._moviesServices.getMovies("trending/movie/week").subscribe((response)=>{
       this.TrendingMovies = response.results;
+      this._NgxSpinnerService.hide();
     })
   }
   getTvList() {
@@ -60,8 +62,14 @@ export class HomeComponent implements OnInit {
 
   
   ngOnInit(): void {
+    this._NgxSpinnerService.show();
     this.getMoviesList();
+    // setTimeout(() => {
+    //   this._NgxSpinnerService.hide();
+
+    // }, 1500);
     this.getTvList();
+
   }
 
 }

@@ -20,14 +20,14 @@
                         <p class="mb-0">Password is required</p>
                     </div>
                 </div>
-                <div class="">
+                <div class="submission">
                     <button [disabled]="loginForm.invalid" type="submit" class="btn bg-primary text-white mt-3">login</button>
                     <div class="mt-4">
                         <span class="">Don't have an account ?! .. <a routerLink="/signup" class="">Signup</a> now</span>            
                     </div>
                 </div>
             </form>
-            <div *ngIf="error" class="alert alert-danger mt-3">{{error}}</div>
+            <div *ngIf="error" class="alert errorAlert alert-danger mt-3">{{error}}</div>
         </div>
     </div>
 </div>

@@ -9,13 +9,16 @@
     }
 }
 
-form {
+form, .errorAlert {
     width: 50%;
     margin: auto;
 }
 
 @media (max-width: 765px) {
-    form {
+    form, .errorAlert {
         width: 90%;
+    }
+    .submission {
+        text-align: center;
     }
 }

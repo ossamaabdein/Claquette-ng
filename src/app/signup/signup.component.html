@@ -39,12 +39,13 @@
                     <p *ngIf="registerForm.get('password')?.errors?.pattern" class="mb-0">Password is invalid</p>
                 </div>
             </div>
-
-            <button [disabled]="registerForm.invalid" type="submit" class="btn bg-primary text-white mt-3">Sign-up</button>
-            <div class="pt-2">
-                <span class="">Already have an account ?! .. <a routerLink="/login">Login</a> now</span>            
+            <div class="submission">
+                <button [disabled]="registerForm.invalid" type="submit" class="btn bg-primary text-white mt-3">Sign-up</button>
+                <div class="pt-2">
+                    <span class="">Already have an account ?! .. <a routerLink="/login">Login</a> now</span>            
+                </div>
             </div>
         </form>
-        <div *ngIf="error" class="alert alert-danger mt-3">{{error}}</div>
+        <div *ngIf="error" class="alert errorAlert alert-danger mt-3">{{error}}</div>
     </div>
 </div>
