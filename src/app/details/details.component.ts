@@ -24,7 +24,7 @@ RecommendedMovies:any = [];
     this._NgxSpinnerService.show();
     this._MoviesService.getCurrentMovie(this.currentMedia, this.currentId).subscribe((response)=> {
     this.currentMovie = response;
-    this._NgxSpinnerService.hide()    
+    this._NgxSpinnerService.hide();
     })
   }
 

@@ -40,7 +40,7 @@ export class MoviesService {
 
   // When routing to other components, it checks if there is already darkMode applied or not, 
   // otherwise you need to reactivate darkMode again.
-  checkDark(){
+  checkDark() {
     if($(".circle").hasClass("dark")) {
       $("body").css("backgroundColor" , "#171717").css("color" , "#B1BBBB");
       $(".nav-tabs li button").addClass("dark");

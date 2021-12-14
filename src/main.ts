@@ -12,8 +12,4 @@ const loadingScreen = document.querySelector(".loading-screen");
 const body = document.querySelector("body");
 
 platformBrowserDynamic().bootstrapModule(AppModule)
-// .then(() => loadingScreen?.classList.add("loaded"))
-// .then(() => setTimeout(() => 
-// loadingScreen?.remove(), 2000), body?.style.overflow("auto") 
-// )
 .catch(err => console.error(err));

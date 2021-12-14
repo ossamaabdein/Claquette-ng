@@ -64,10 +64,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._NgxSpinnerService.show();
     this.getMoviesList();
-    // setTimeout(() => {
-    //   this._NgxSpinnerService.hide();
-
-    // }, 1500);
     this.getTvList();
 
   }
